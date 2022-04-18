@@ -3,6 +3,9 @@ import { Carousel } from "react-bootstrap";
 import bannerOne from "../../assets/banner/banner-1.jpg"
 import bannerTwo from "../../assets/banner/banner-2.jpg"
 import bannerThree from "../../assets/banner/banner-3.jpg"
+import ExtraPart from "../ExtraPart/ExtraPart";
+import Footer from "../Footer/Footer";
+import Services from "./Services";
 const Home = () => {
   return (
     <div >
@@ -43,6 +46,15 @@ const Home = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <div>
+        <Services></Services>
+      </div>
+      <div className=" container ms-auto">
+      <ExtraPart></ExtraPart>
+      </div>
+      <div>
+        <Footer></Footer>
+      </div>
     </div>
   );
 };

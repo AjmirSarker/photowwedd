@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Marriage Event",
+        "price": "20,000",
+        "description": "Want to make sure your body's every nook and hook is perfectly fine you should book it now",
+        "img": "https://i.ibb.co/hHHMZyK/Screenshot-2022-04-18-at-11-36-56-patient-rights-webp-WEBP-Image-493-335-pixels.png"
+    },
+    {
+        "id": 2,
+        "name": "Seminar Event",
+        "price": "25,000",
+        "description": "Worry or confused about your body condition you should book now",
+        "img": "https://i.ibb.co/B4ZrQmK/shutterstock-98521079.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Formal PhotoShot",
+        "price": "10,000",
+        "description": "Always know your current health condition without worrying about sudden disease",
+        "img": "https://i.ibb.co/hRTQpqS/Screenshot-2022-04-18-at-11-58-38-doctor-in-surgery-with-male-patient-using-digital-tablet-jpg-WEBP.png"
+    }
+]

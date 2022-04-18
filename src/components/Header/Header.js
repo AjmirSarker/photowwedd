@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import './Header.css'
 import { Button, Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import CustomLink from "../CustomLink/CustomLink";
 import { Link } from "react-router-dom";
@@ -12,14 +13,14 @@ const Header = () => {
             signOut(auth);
     }
     return (
-        <Navbar expand="lg">
-            <Container>
-                <Navbar.Brand className="" href="#home">
-                    React-Bootstrap
+        <Navbar className="p-3 sticky-top nav bg-success " expand="lg">
+           
+                <Navbar.Brand className=" fw-bold fs-2" href="#home">
+                   Wedding  Photographer
                 </Navbar.Brand>
                 <Navbar.Toggle className="order-3 order-md-2"aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse className="order-3 order-md-2" id="basic-navbar-nav">
-                    <Nav className="ms-auto d-flex align-items-md-center">
+                    <Nav className="Text-size mx-auto d-flex align-items-md-center">
                         <Nav.Link>
                             <CustomLink as={Link} className="p-2 text-decoration-none" to="/">
                                 Home
@@ -67,7 +68,7 @@ const Header = () => {
                     </NavDropdown>):
                     (<Nav.Link className="order-md-3"><Link className="nav-link" to='/login'>Log in</Link></Nav.Link>)
                 }
-            </Container>
+           
         </Navbar>
     );
 };

@@ -31,7 +31,7 @@ const Login = memo(() => {
           await signInWithEmailAndPassword(email,password)
           toast('login')
       }
-      const togglePass = () =>{
+      const ShowPassword = () =>{
           setShowPass(!showPass)
       }
       if(loading || googleLoading || sending){
@@ -54,7 +54,7 @@ const Login = memo(() => {
       }
   return (
     <div className="">
-        <h1 className="text-center my-3">Log in</h1>
+        <h1 className="text-center my-3 text-success">Log in</h1>
       <div className="p-3">
       <Form onSubmit={handleLogin} className='mx-auto w-75' >
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -63,7 +63,7 @@ const Login = memo(() => {
 
         <Form.Group style={{position:'relative'}} className="mb-3" controlId="formBasicPassword">
           <Form.Control className="py-3" required ref={userPassword} type={showPass ? "text" : "password"} placeholder="enter your password" />
-          <p className="border-0 bg-white" style={{position:'absolute',top:'15px',right:'5px',cursor:'pointer'}} onClick={togglePass}><AiOutlineEye></AiOutlineEye></p>
+          <p className="border-0 bg-white" style={{position:'absolute',top:'15px',right:'5px',cursor:'pointer'}} onClick={ShowPassword}><AiOutlineEye></AiOutlineEye></p>
         </Form.Group>
         {errorElement}
         <Button className="w-25 rounded-pill py-2 mx-auto d-block fw-bold" variant="success" type="submit">

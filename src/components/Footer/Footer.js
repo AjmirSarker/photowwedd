@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <footer className='text-center'>
             <h1>Arafat Sarker</h1>
-            <p>Copyright © {year} Arafat Sarker</p>
+            <p>Copyright © {year} Wedding  Clicker</p>
             <p>All rights reserved</p>
            
         </footer>

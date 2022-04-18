@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { FcGoogle } from "react-icons/fc";
+import {AiOutlineEye} from  "react-icons/ai";
 import {useCreateUserWithEmailAndPassword,useSignInWithGoogle, useUpdateProfile,} from "react-firebase-hooks/auth";
 import auth from "../../Firebase/firebase.init";
 import { Link, useNavigate } from "react-router-dom";
@@ -53,30 +54,30 @@ const SignUp = () => {
   }
   return (
     <div className=" container">
-        <h1 className="text-center">Sign Up</h1>
+        <h1 className="text-center text-warning">Sign Up</h1>
     <div className="w-75 mx-auto p-3">
       <Form className="my-2" onSubmit={submitted}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             ref={newName}
             type="name"
-            placeholder="Enter your name"
+            placeholder="Enter name"
             className="py-2 fs-4"
             required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control required className="py-2 fs-4" ref={newEmail} type="email" placeholder="Enter your email" />
+          <Form.Control required className="py-2 fs-4" ref={newEmail} type="email" placeholder="Enter email address" />
         </Form.Group>
         <Form.Group className="mb-3 positionOne" controlId="formBasicPassword">
           <Form.Control
             ref={newPassword}
             type={showPass ? "text" : "password"} 
-            placeholder="Enter new password "
+            placeholder="Enter  password "
             className="py-2 fs-4"
             required
           />
-          <p style={{cursor:'pointer'}} className="bg-white border-0 positionTwo" onClick={togglePasswordOne}>Show</p>
+         
         </Form.Group>
         <Form.Group className="mb-3 positionOne" controlId="formBasicPassword">
           <Form.Control
@@ -86,25 +87,25 @@ const SignUp = () => {
             className="py-2 fs-4"
             required
           />
-          <p style={{cursor:'pointer'}} className="bg-white border-0  positionTwo" onClick={togglePasswordTwo}>Show</p>
+          <p style={{cursor:'pointer'}} className="bg-white border-0  positionTwo" onClick={togglePasswordTwo}><AiOutlineEye></AiOutlineEye></p>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check onClick={()=>{setAgree(!agree)}} type="checkbox" name="terms" label="Accept the terms and conditions" />
+          <Form.Check className="text-info" onClick={()=>{setAgree(!agree)}} type="checkbox" name="terms" label="Accept the terms and conditions" />
         </Form.Group>
         {errorElement}
-        <div className="mx-auto d-flex justify-content-center">
-        <Button disabled={!agree} className="w-50 fs-4" variant="primary" type="submit">
+        <div className="mx-auto d-flex justify-content-center  ">
+        <Button disabled={!agree} className="w-50 fs-4 rounded-pill " variant="success" type="submit">
           Sign Up
         </Button>
         </div>
       </Form>
     </div>
     <div className="my-2 pb-5 w-75 mx-auto">
-        <div className="text-center"> <Link className="text-decoration-none" to='/login'>Already Have an account ?</Link></div>
+        <div className="text-center"> <Link className="text-decoration-none text-success" to='/login'>Already Have an account ?</Link></div>
         <div className="d-flex align-items-center">
-          <div style={{ height: "1px" }} className="bg-dark w-50"></div>
-          <p className="pt-3 px-3 fw-bold">OR</p>
-          <div style={{ height: "1px" }} className="bg-dark w-50"></div>
+          
+          <p className="pt-3 px-3 fw-bold mx-auto">OR</p>
+          
         </div>
         <div className="text-center mt-3 py-1">
           <button

@@ -71,7 +71,7 @@ const Login = memo(() => {
         </Button>
       </Form>
       <div className="my-2 pb-5 w-75 mx-auto">
-        <div style={{height:'80px'}} className="mx-auto mt-5 text-center rounded fs-5 fw-bold bg-secondary w-25 p-1  ">New user ? <br></br> <Link className="text-decoration-none text-warning" to='/signup'>Create an account</Link></div>
+        <div style={{height:'120px'}} className="mx-auto mt-5 text-center rounded fs-5 fw-bold bg-secondary w-25 p-1  ">New user ? <br></br> <Link className="text-decoration-none text-warning" to='/signup'>Create an account</Link></div>
         <div className="text-center"><button className="text-decoration-none fw-bold btn btn-link text-danger" onClick={resetPassword}>Forget Password ?</button></div>
         <div className="d-flex align-items-center">
           

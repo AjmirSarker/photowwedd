@@ -16,7 +16,7 @@ const Header = () => {
         <Navbar className="p-3 sticky-top nav bg-success " expand="lg">
            
                 <Navbar.Brand className=" fw-bold fs-2" href="#home">
-                   Wedding  Photographer
+                   Wedding  Clicker
                 </Navbar.Brand>
                 <Navbar.Toggle className="order-3 order-md-2"aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse className="order-3 order-md-2" id="basic-navbar-nav">
@@ -51,22 +51,13 @@ const Header = () => {
                 </Navbar.Collapse>
                 {
                     user? (               
-                    <NavDropdown
-                        className="order-md-3"
-                        title='Profile'
-                        id="basic-nav-dropdown"
-                    >
-                        <NavDropdown.Item>
-                            {
-                            user.photoURL? (<img src={user.photoURL} alt='profile pic'/>):
-                            (<p>{user.displayName}</p>)
-                            }
-                        </NavDropdown.Item>
-                        <NavDropdown.Item>
-                        <Button className="w-100 btn btn-light text-danger" onClick={handleSignOut}>Sign out</Button>
-                        </NavDropdown.Item>
-                    </NavDropdown>):
-                    (<Nav.Link className="order-md-3"><Link className="nav-link" to='/login'>Log in</Link></Nav.Link>)
+                   
+                        <p style={{paddingLeft :'150px'}}>
+                           <p className="text-light" > {user.displayName}</p>
+                        <Button  className="w-100 btn btn-light text-dark " onClick={handleSignOut}>Sign out</Button>
+                        </p>
+                   ):
+                    (<Nav.Link className="order-md-3"><Link className="nav-link fw-bold fs-4 text-light" to='/login'>Log in</Link></Nav.Link>)
                 }
            
         </Navbar>

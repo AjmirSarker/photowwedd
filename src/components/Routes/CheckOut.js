@@ -28,7 +28,7 @@ const CheckOut = () => {
         </Form.Group>
         
     <div className='text-center w-100 '>
-        <Button variant="success " type="submit">
+        <Button variant="success " className='fs-4' type="submit">
           Submit
         </Button>
         </div>

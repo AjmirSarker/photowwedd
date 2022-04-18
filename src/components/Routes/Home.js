@@ -1,8 +1,8 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import bannerOne from "../../assets/banner/banner-1.jpg"
-import bannerTwo from "../../assets/banner/banner-2.jpg"
-import bannerThree from "../../assets/banner/banner-3.jpg"
+import bannerOne from "../../assets/Arafat/okay3.jpg"
+import bannerTwo from "../../assets/Arafat/okay2.jpg"
+import bannerThree from "../../assets/Arafat/okay.jpg"
 import ExtraPart from "../ExtraPart/ExtraPart";
 import Footer from "../Footer/Footer";
 import Services from "./Services";
@@ -12,13 +12,13 @@ const Home = () => {
       <Carousel  className="">
         <Carousel.Item interval={1000}>
           <img
-            className="img-fluid"
+            className="d-block w-100"
             src={bannerOne}
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>Wedding Event</h3>
+            <p>A holy event</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item interval={500}>
@@ -28,8 +28,8 @@ const Home = () => {
             alt="Second slide"
           />
           <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h3>Formal Photoshoot</h3>
+            <p>Formal Photoshoot for better confidence</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -39,9 +39,9 @@ const Home = () => {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h3>Third slide label</h3>
+            <h3>Seminar Event</h3>
             <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              Good response for seminars
             </p>
           </Carousel.Caption>
         </Carousel.Item>

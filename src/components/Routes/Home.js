@@ -49,7 +49,7 @@ const Home = () => {
       <div>
         <Services></Services>
       </div>
-      <div className=" container ms-auto">
+      <div className=" container mt-5">
       <ExtraPart></ExtraPart>
       </div>
       <div>

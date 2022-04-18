@@ -2,6 +2,7 @@ import React, { memo, useRef, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { FcGoogle } from "react-icons/fc";
+import {AiOutlineEye} from  "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/firebase.init";
 import Loading from "../Loading/Loading";
@@ -9,7 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = memo(() => {
-    const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithEmailAndPassword,user,loading,error,] = useSignInWithEmailAndPassword(auth);
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
     const [showPass,setShowPass] = useState(false);
@@ -19,7 +20,7 @@ const Login = memo(() => {
       const location = useLocation()
       let from = location.state?.from?.pathname || '/';
       
-      if(user || user1){
+      if(user || googleUser){
           navigate(from,{replace:true});
       }
 
@@ -33,12 +34,12 @@ const Login = memo(() => {
       const togglePass = () =>{
           setShowPass(!showPass)
       }
-      if(loading || loading1 || sending){
+      if(loading || googleLoading || sending){
         return <Loading></Loading>;
       }
       let errorElement ;
-      if(error || error1){
-         errorElement = <p>{error?.message}{error1?.message}</p>
+      if(error || googleError){
+         errorElement = <p>{error?.message}{googleError?.message}</p>
       }
       const resetPassword = async () =>{
         console.log(user);
@@ -62,27 +63,27 @@ const Login = memo(() => {
 
         <Form.Group style={{position:'relative'}} className="mb-3" controlId="formBasicPassword">
           <Form.Control className="py-3" required ref={userPassword} type={showPass ? "text" : "password"} placeholder="enter your password" />
-          <p className="border-0 bg-white" style={{position:'absolute',top:'15px',right:'5px',cursor:'pointer'}} onClick={togglePass}>Show</p>
+          <p className="border-0 bg-white" style={{position:'absolute',top:'15px',right:'5px',cursor:'pointer'}} onClick={togglePass}><AiOutlineEye></AiOutlineEye></p>
         </Form.Group>
         {errorElement}
-        <Button className="w-25 py-2 mx-auto d-block" variant="primary" type="submit">
+        <Button className="w-25 rounded-pill py-2 mx-auto d-block fw-bold" variant="success" type="submit">
           Log in
         </Button>
       </Form>
       <div className="my-2 pb-5 w-75 mx-auto">
-        <div className="text-center">New user ? <Link className="text-decoration-none" to='/signup'>Create an account</Link></div>
-        <div className="text-center"><button className="text-decoration-none btn btn-link text-primary" onClick={resetPassword}>Forget Password ?</button></div>
+        <div style={{height:'80px'}} className="mx-auto mt-5 text-center rounded fs-5 fw-bold bg-secondary w-25 p-1  ">New user ? <br></br> <Link className="text-decoration-none text-warning" to='/signup'>Create an account</Link></div>
+        <div className="text-center"><button className="text-decoration-none fw-bold btn btn-link text-danger" onClick={resetPassword}>Forget Password ?</button></div>
         <div className="d-flex align-items-center">
-          <div style={{ height: "1px" }} className="bg-dark w-50"></div>
-          <p className="pt-3 px-3 fw-bold">OR</p>
-          <div style={{ height: "1px" }} className="bg-dark w-50"></div>
+          
+          <p className="pt-3 px-3 fs-4 mx-auto fw-bold">Another way</p>
+          
         </div>
         <div className="text-center mt-3 py-1">
-          <button onClick={() => signInWithGoogle()}className="btn btn-light" >
+          <button onClick={() => signInWithGoogle()}className="btn btn-dark text-light rounded-pill" >
             <span className="fs-3">
               <FcGoogle></FcGoogle>
             </span>{" "}
-            <span className="fs-4 text-muted">
+            <span className="fs-4  ">
               Continue with google
             </span>
           </button>
